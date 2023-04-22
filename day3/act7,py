@@ -1,0 +1,98 @@
+import random
+def count_vowels(word):
+    vowels = "aeiou"
+    return len([v for v in word if v in vowels])
+
+print(count_vowels("umbrella"))
+
+#choose a color, if it matches computer color, you win
+
+
+computer = 0
+# print(choice)
+person = 0
+play = input("do you want to play? enter Y for yes and N for no:  ")
+
+
+while play == "Y":
+    my_color = input("choose a color:  ")
+    choice = random.choice(["red", "green", "blue", "yellow"])
+    if my_color == choice:
+        print ("Hooray!, You have won")
+        person += 1
+    else:
+        print("oops! you lost, computer won")
+        computer += 1
+    play = input("do you want to play? enter Y for yes and N for no:  ")
+
+if computer > person:
+    print(f"computer won with {computer} points")
+else:
+    print(f"you won with {person} points")
+    
+
+
+#//////////////////////correction//////////////////////
+
+
+
+while True:
+    player_options = {1:"Red", 2:"Blue", 3:"Green", 4:"Yellow"}
+    
+    computer_choice = random.choice(list(player_option.values()))
+    
+    print("choose a color... \n\t1-> Red \n\t2-> Blue \n\t3-> Green \n\t4-> Yellow ")
+    option = input("Choose a number: ")
+    
+    player_choice = player_options[int(option)]
+    
+    print(f"player\'s option {player_choice} computer_option: {computer_choice}")
+    
+    if computer_choice == player_choice:
+        print("You won!")
+    res = input("play again? y/n ")
+    
+    if res.lower() == "n":
+        print("GAME OVER!")
+        break
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

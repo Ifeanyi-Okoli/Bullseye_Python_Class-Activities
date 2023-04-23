@@ -35,25 +35,49 @@ else:
 #//////////////////////correction//////////////////////
 
 
-
+player_count = 0
+computer_count = 0
+print("\n\n =======******===== THE COLOR GAME (USER VS COMPUTER) ======******=======\n\n)")
+print ("Welcome to the game of colors. Computer will choose a color and you have to choose the same color.\n")
+print (f"Computer\'s score: {computer_count}\n")
+print (f"Player\'s score: {player_count} \n")
 while True:
     player_options = {1:"Red", 2:"Blue", 3:"Green", 4:"Yellow"}
     
-    computer_choice = random.choice(list(player_option.values()))
+    computer_choice = random.choice(list(player_options.values()))
     
     print("choose a color... \n\t1-> Red \n\t2-> Blue \n\t3-> Green \n\t4-> Yellow ")
-    option = input("Choose a number: ")
+    option = input("\nChoose a number: ")
     
+    try:
+      if int(option) < 5 or isinstance(int(option)):
+         print("Valid Entry")
+    except:
+      print("An error occurred. Enter a valid number")
+    finally:
+      pass
+    
+        
     player_choice = player_options[int(option)]
     
-    print(f"player\'s option {player_choice} computer_option: {computer_choice}")
+    print(f"\nplayer\'s option {player_choice} computer_option: {computer_choice}")
     
     if computer_choice == player_choice:
         print("You won!")
+        player_count += 1
+        print (f"Computer\'s score: {computer_count}\n")
+        print (f"Player\'s score: {player_count} \n")
+    else:
+        print("Oops! You lost and computer won. Please try again...")
+        computer_count += 1
+        print (f"Computer\'s score: {computer_count}\n")
+        print (f"Player\'s score: {player_count} \n")
     res = input("play again? y/n ")
     
     if res.lower() == "n":
+        print(f"\nCONGRATULATIONS! You won with a score of {player_count} and computer lost with a score of {computer_count}\n") if player_count > computer_count else print(f"\nSORRY! You lost with a score of {player_count} and computer won with a score of {computer_count}\n") if computer_count > player_count else print(f"\n The Game ends in a draw. NO VICTOR, NO VANQUISHED\n")
         print("GAME OVER!")
+        print("\n\n =======******===== BYE FOR NOW AND HOPE TO HAVE YOU BACK SOON ======******=======\n\n)")
         break
 
         

@@ -1,7 +1,9 @@
+#Reverse the string, make the middle character the first and the first, the middle.
 mystr= "djfifrjdnkaodeueygforoee"
 mid = len(mystr)//2
 newstr = mystr[::-1]
 print(newstr[mid] + newstr[1:mid] + newstr[0] + newstr[mid+1:])
+
 #------------------task 2-------------------
 import random
 myname = "Ifeanyi Okoli".split(" ")

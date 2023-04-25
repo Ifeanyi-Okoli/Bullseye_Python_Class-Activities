@@ -13,9 +13,9 @@ consumed = []
 
 
 
-for f, i of enumerate(food):
-    index = random.randint(0, l-1)
-    if (index == i)
+# for f, i of enumerate(food):
+#     index = random.randint(0, l-1)
+#     if (index == i)
 
 
 
@@ -27,7 +27,7 @@ for f, i of enumerate(food):
 items_list = ["beer", "pizza", "chicken", "small-chops", "yam", "rice", "beans", "pap", "akara", "cake", "doughnut", "chips", "plantain"]
 
 eaten = []
-while len(item_list) > 0:
+while len(items_list) > 0:
     
     index = random.randint(0, len(items_list)-1)
     eaten_item = items_list.pop(index)

@@ -11,3 +11,8 @@ class Friends:
         self.phone = phone
         self.birthday = datetime.datetime.strptime(birthday, "%Y-%m-%d").date()
         self.anniversary = datetime.datetime.strptime(anniversary, "%Y-%m-%d").date()
+        
+today = datetime.date.today()
+date_str = today.strftime("%d/%m/%Y")
+print("Today's date is:", date_str)
+

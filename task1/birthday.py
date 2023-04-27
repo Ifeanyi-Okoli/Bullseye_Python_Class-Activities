@@ -1,26 +1,26 @@
 # Write a python script that will automatically send an email or SMS (or both) to your Friends on their birthday and wedding Anniversary.
-import datetime
-import smtplib
+import datetime  #importing datetime module
+import smtplib  #importing smtplib module for email
 # import requests
 import os
 import random
 import csv
 import email
-import ssl
-# import Client from twilio
-from twilio.rest import Client
+import ssl  #importing ssl module for email
+import config   #importing config file for email
+# from twilio.rest import Client
 
 #List of friends with their details
 friendsList = {
-    "Jacob": {"birthday": "25-04-1980", "anniversary": "30-04-2010", "phone": "1234567890", "email": "john.josiah@gmail.com"},
-    "Richard": {"birthday": "26-04-1980", "anniversary": "29-04-2010", "phone": "08035138223", "email": "richard.james@gmail.com"},
-    "Simon": {"birthday": "27-04-1980", "anniversary": "28-04-2010", "phone": "0178593456", "email": "simon.michael@gmail.com"},
-    "Peter": {"birthday": "01-05-1980", "anniversary": "02-05-2010", "phone": "1234567890", "email": "peter.drucker@gmail.com"},
+    "Jacob": {"birthday": "25-04-1980", "anniversary": "30-04-2010", "phone": "1234567890", "email": "jfnykly@gmail.com"},
+    "Richard": {"birthday": "26-04-1980", "anniversary": "29-04-2010", "phone": "08035138223", "email": "ituaakhideno@gmail.com"},
+    "Simon": {"birthday": "27-04-1980", "anniversary": "28-04-2010", "phone": "0178593456", "email": "ituaakhideno@gmail.com"},
+    "Peter": {"birthday": "01-05-1980", "anniversary": "02-05-2010", "phone": "1234567890", "email": "fnykly@gmail.com"},
         }
                
 # Email Account Details
-myEmail = "fnykly@gmail.com"
-myPassword = "Amanda*2020"               
+myEmail = config.EMAIL_ADDRESS
+myPassword = config.PASSWORD              
                
 # Server Details
 smtpServer = "smtp.gmail.com"
@@ -28,7 +28,7 @@ smtpPort = 465
 context= ssl.create_default_context()     
 #Function to send email
 def sendEmail(subject, message, to_email):
-    with smtplib.SMTP(smtpServer, smtpPort, context) as smtp:
+    with smtplib.SMTP_SSL(smtpServer, smtpPort, context) as smtp:
         smtp.starttls()
         smtp.login(myEmail, myPassword)
         smtp.sendmail(myEmail, to_email, f"Subject: {subject}\n\n{message}")
@@ -37,6 +37,7 @@ def sendEmail(subject, message, to_email):
 #todays date
 today = datetime.date.today()
 
+#iterate over the friends list
 for friend, details in friendsList.items():
     #Check if today is friend's birthday
     bday = datetime.datetime.strptime(details["birthday"], '%d-%m-%Y').date()
@@ -81,7 +82,7 @@ client = Client(account_sid, auth_token)
 
 message = client.messages.create(
     to='+2347062021434',
-    from_='+1 607 400 8018',
+    from_='+16074008018',
     body='Hello from Python!'
 )
 

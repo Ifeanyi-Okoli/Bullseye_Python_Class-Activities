@@ -12,6 +12,10 @@ print(setvar())
 
 sum = 0
 def recursv(arr):
+    # for i in arr:
+    #     sum += i
+    # return sum
+    
     global sum
     if len(arr) == 0:
         return sum

@@ -1,0 +1,1 @@
+cityList= ["Lagos", "Abuja", "Yola", "Benin City", "Awka", "Portharcourt"]

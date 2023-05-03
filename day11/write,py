@@ -1,0 +1,7 @@
+file = open("comments.txt", "a")
+file.write("This is our first file\n")
+file.close()
+
+
+file = open("comments.txt", "r")
+print(file.read())

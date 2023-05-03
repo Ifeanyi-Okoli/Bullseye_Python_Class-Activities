@@ -1,5 +1,6 @@
 import random
 import time
+import pickle
 def pairAlphaIndex(alphas:list):
     alpha_index = zip(alphas, range(len(alphas))) 
     return list(alpha_index)
@@ -17,8 +18,12 @@ def cumPair (alphas, players, turn):
     print(players)
     
 def start_game(alphas, players, turn):
-    cumPair(alphas, players, 0)
-    
+    option = input("1. Statrt New Game\n2. Continue previous Game ")
+    if option == "1":
+        cumPair(alphas, players, 0)
+    else:
+        loaded_players = loadScore()
+        cumPair(alphas, loaded_players, 0)
 def showScoreBoard(players):
     board = f"""
     FINAL SCORE:
@@ -34,6 +39,16 @@ def showScoreBoard(players):
     
 def updateScore(player, score):
     player["score"] += score
+
+
+def saveScore(plaers):
+    with open("score", "wb") as file:
+        pickle.dump(players, file)
+
+def loadScore():
+    with open("savedScores", "rb") as file:
+        loaded_scores = pickle.load(file)
+        return loaded_scores
     
 players = [
     {"name": "player 1", "score": 0},

@@ -2,7 +2,7 @@
 User can sign up / Register - 10 Marks
 User can log in - 10 Marks.
 User can deposit funds - 10 Marks.
-User can Transfer Fund to another account - 10 Marks.
+gUser can Transfer Fund to another account - 10 Marks.
 User can view Transaction History - 10 Marks.
 User can check balance - 10 Marks.
 Verbose Git commits - 10 Marks.

@@ -1,6 +1,9 @@
 import asyncio
 import requests
 import os 
+import Tkinter as tk
+import numpy as np
+import matplotlib.pyplot as plt
 
 #async runs on single thread, but uses mulri-tasking or cooperative multi-tasking
 

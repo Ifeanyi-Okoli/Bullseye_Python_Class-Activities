@@ -1,4 +1,4 @@
-from helper.sms import SMS as sms, SMS_API_KEY
+from helper.sms import SMS_API_KEY as sms 
 from helper.video import StreamVideo as video
 
 

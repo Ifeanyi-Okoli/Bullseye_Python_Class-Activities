@@ -1,4 +1,4 @@
-from multiprocessing import Process, Queue, Pool, cpu_count, memory_info
+from multiprocessing import Process, Queue, Pool, cpu_count
 import time
 
 def calcAvg(nums):

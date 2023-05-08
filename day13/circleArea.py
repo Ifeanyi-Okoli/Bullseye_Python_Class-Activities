@@ -15,3 +15,5 @@ class Trigger:
         return cls.PI * (cls.getRadius**2)
     
 
+circle1 = Trigger(7)
+print(circle1.area())

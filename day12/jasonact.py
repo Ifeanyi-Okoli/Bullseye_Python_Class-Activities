@@ -22,3 +22,5 @@ with open("person.json", "a") as file:
 
 # use picckle for transmitting between sockets but same language. Binary File is a serialized file that is saved in a computer friedly format.
 
+#dumps is used to serialized python objects into JSON formated string
+#dump is used to serialized python objects into JSON formated string and save it in a file
